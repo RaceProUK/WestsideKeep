@@ -36,11 +36,12 @@ class GT1CareerSections(OptionSet):
     - Licenses
     - GT League
     - Special Events
+    - Spot Races
     - Endurance
     """
     display_name = "Gran Turismo Mode Objective Areas"
-    valid_keys = ["Licenses", "GT League", "Special Events", "Endurance"]
-    default = valid_keys[0:3]
+    valid_keys = ["Licenses", "GT League", "Special Events", "Spot Races", "Endurance"]
+    default = valid_keys[0:4]
 
 class GranTurismo(Game):
     name = "Gran Turismo"
@@ -73,6 +74,10 @@ class GranTurismo(Game):
         return "Special Events" in self.career_sections
     
     @property
+    def include_spot_races(self) -> bool:
+        return "Spot Races" in self.career_sections
+    
+    @property
     def include_endurances(self) -> bool:
         return "Endurance" in self.career_sections
     
@@ -99,6 +104,9 @@ class GranTurismo(Game):
         return ["FF Challenge", "FR Challenge", "4WD Challenge", "Lightweight Sports Battle Stage",
                 "US-Japan Sports Car Championship", "Anglo-Japanese Sports Car Championship", "Anglo-American Sports Car Championship",
                 "Megaspeed Cup", "Normal Car World Speed Contest", "Hard-Tuned Car Speed Contest"]
+    
+    def spot_race_tracks(self) -> List[str]:
+        return ["High Speed Ring", "Grand Valley East", "Autumn Ring Mini", "Trial Mountain Circuit", "Deep Forest"]
     
     def endurances(self) -> List[str]:
         return ["Grand Valley 300km", "Special Stage Route 11 All-Night 1", "Special Stage Route 11 All-Night 2"]
@@ -161,6 +169,7 @@ class GranTurismo(Game):
         return (self.get_licence_objectives() +
                 self.get_league_objectives() +
                 self.get_event_objectives() +
+                self.get_spot_race_objectives() +
                 self.get_endurance_objectives()
                 if self.include_career_mode else [])
     
@@ -211,6 +220,28 @@ class GranTurismo(Game):
                 weight = 3
             )
         ] if self.include_special_events else []
+    
+    def get_spot_race_objectives(self) -> List[GameObjectiveTemplate]:
+        return [
+            GameObjectiveTemplate(
+                label = "Stand on the podium in a Spot Race at TRACK!",
+                data = {
+                    "TRACK": (self.spot_race_tracks, 1)
+                },
+                is_time_consuming = False,
+                is_difficult = False,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Win a Spot Race at TRACK!",
+                data = {
+                    "TRACK": (self.spot_race_tracks, 1)
+                },
+                is_time_consuming = False,
+                is_difficult = False,
+                weight = 3
+            )
+        ] if self.include_spot_races else []
     
     def get_endurance_objectives(self) -> List[GameObjectiveTemplate]:
         return [
