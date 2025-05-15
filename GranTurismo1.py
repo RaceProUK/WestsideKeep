@@ -78,6 +78,12 @@ class GranTurismo(Game):
     
     def arcade_classes(self) -> List[str]:
         return ["C", "B", "A"]
+
+    def arcade_ranks(self) -> List[str]:
+        return ["Easy", "Normal"]
+    
+    def arcade_hard_ranks(self) -> List[str]:
+        return ["Hard"]
     
     def arcade_tracks(self) -> List[str]:
         return ["High Speed Ring", "Trial Mountain Circuit", "Grand Valley East", "Clubman Stage Route 5",
@@ -106,9 +112,10 @@ class GranTurismo(Game):
     def get_arcade_objectives(self) -> List[GameObjectiveTemplate]:
         return [
             GameObjectiveTemplate(
-                label = "Stand on the podium at TRACK in Class CLASS in Arcade Mode!",
+                label = "Stand on the podium at TRACK in Class CLASS at RANK level or higher in Arcade Mode!",
                 data = {
                     "CLASS": (self.arcade_classes, 1),
+                    "RANK": (self.arcade_ranks, 1),
                     "TRACK": (self.arcade_tracks, 1)
                 },
                 is_time_consuming = False,
@@ -116,13 +123,36 @@ class GranTurismo(Game):
                 weight = 3
             ),
             GameObjectiveTemplate(
-                label = "Win the race at TRACK in Class CLASS in Arcade Mode!",
+                label = "Win the race at TRACK in Class CLASS at RANK level or higher in Arcade Mode!",
                 data = {
                     "CLASS": (self.arcade_classes, 1),
+                    "RANK": (self.arcade_ranks, 1),
                     "TRACK": (self.arcade_tracks, 1)
                 },
                 is_time_consuming = False,
                 is_difficult = False,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Stand on the podium at TRACK in Class CLASS at RANK level in Arcade Mode!",
+                data = {
+                    "CLASS": (self.arcade_classes, 1),
+                    "RANK": (self.arcade_hard_ranks, 1),
+                    "TRACK": (self.arcade_tracks, 1)
+                },
+                is_time_consuming = False,
+                is_difficult = True,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Win the race at TRACK in Class CLASS at RANK level in Arcade Mode!",
+                data = {
+                    "CLASS": (self.arcade_classes, 1),
+                    "RANK": (self.arcade_hard_ranks, 1),
+                    "TRACK": (self.arcade_tracks, 1)
+                },
+                is_time_consuming = False,
+                is_difficult = True,
                 weight = 3
             )
         ] if self.include_arcade_mode else []
