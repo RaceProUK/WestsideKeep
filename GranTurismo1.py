@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-import functools
-from typing import List, Dict, Set
+from typing import List, Set
 
 from dataclasses import dataclass
 
