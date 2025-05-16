@@ -36,12 +36,13 @@ class GT2CareerSections(OptionSet):
     - Gran Turismo League
     - Special Events
     - Dirt Events
+    - Manufacturer Events
     - Event Generator (also known as the Event Synthesizer)
     - Endurance
     """
     display_name = "Gran Turismo Mode Objective Areas"
-    valid_keys = ["Licenses", "Gran Turismo League", "Special Events", "Dirt Events", "Event Generator", "Endurance"]
-    default = valid_keys[0:5]
+    valid_keys = ["Licenses", "Gran Turismo League", "Special Events", "Dirt Events", "Manufacturer Events", "Event Generator", "Endurance"]
+    default = valid_keys[0:6]
 
 class GranTurismo2(Game):
     name = "Gran Turismo 2"
@@ -76,6 +77,10 @@ class GranTurismo2(Game):
     @property
     def include_rally_events(self) -> bool:
         return "Dirt Events" in self.career_sections
+    
+    @property
+    def include_maker_events(self) -> bool:
+        return "Manufacturer Events" in self.career_sections
     
     @property
     def include_event_synth(self) -> bool:
@@ -169,6 +174,24 @@ class GranTurismo2(Game):
         ]
         return [f"{course} Race {n + 1}" for course in courses for n in range(0, 3)]
     
+    def maker_events_races(self) -> List[str]:
+        return [
+            "106 Challenge", "155 & 156 Race", "3 Series Cup", "500 Meeting", "Altezza Cup",
+            "Alto Works Cup", "AZ-1 Challenge", "Beat the Beat", "Cappuccino Cup", "Celica Meeting",
+            "Challenge S2000", "Civic Race", "Clio Cup", "Corvette Meeting", "Cuore Challenge",
+            "DB-7 Trophy", "Delta Cup", "Demio Race", "Elan Trophy", "Elise Trophy",
+            "Evolution Meeting", "Focus Challenge", "Golf Cup", "GT-R Meeting", "Impreza Challenge",
+            "Ka Challenge", "March Trophy", "MGF Challenge", "Midget Contest", "Mini Challenge",
+            "Mirage Cup", "MR-S Trophy", "MX-5 Trophy", "Neon Trophy", "New Beetle Challenge",
+            "NSX Trophy", "Pulsar Cup", "RX-7 Meeting", "Saxo Challenge", "Silvia & 180SX Club",
+            "Sirion Challenge", "Skyline R34 Challenge", "SLK Trophy", "Starlet Meeting", "SVX Challenge",
+            "Tigra Cup", "TT Challenge", "Tuscan Speed Challenge", "Type R Meeting", "Viper Festival of Speed",
+            "Yaris Trophy", "ZZ Challenge"
+        ]
+    
+    def maker_events_styles(self) -> List[str]:
+        return ["Normal", "Racing"]
+
     def event_synth_ranks(self) -> List[str]:
         return ["Easy/Beginner", "Normal/Intermediate"]
     
@@ -248,6 +271,7 @@ class GranTurismo2(Game):
                 self.get_league_objectives() +
                 self.get_event_objectives() +
                 self.get_rally_objectives() +
+                self.get_maker_objectives() +
                 self.get_event_synth_objectives() +
                 self.get_endurance_objectives()
                 if self.include_career_mode else [])
@@ -357,6 +381,20 @@ class GranTurismo2(Game):
                 weight = 3
             )
         ] if self.include_rally_events else []
+    
+    def get_maker_objectives(self) -> List[GameObjectiveTemplate]:
+        return [         
+            GameObjectiveTemplate(
+                label = "Win the RACE in a STYLE car!",
+                data = {
+                    "RACE": (self.maker_events_races, 1),
+                    "STYLE": (self.maker_events_styles, 1),
+                },
+                is_time_consuming = False,
+                is_difficult = False,
+                weight = 3
+            )
+        ] if self.include_maker_events else []
     
     def get_event_synth_objectives(self) -> List[GameObjectiveTemplate]:
         return [
