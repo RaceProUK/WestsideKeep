@@ -90,8 +90,10 @@ class GranTurismo(Game):
         return ["Hard"]
     
     def arcade_tracks(self) -> List[str]:
-        return ["High Speed Ring", "Trial Mountain Circuit", "Grand Valley East", "Clubman Stage Route 5",
-                "Autumn Ring", "Deep Forest", "Special Stage Route 5", "Grand Valley Speedway"]
+        return [
+            "High Speed Ring", "Trial Mountain Circuit", "Grand Valley East", "Clubman Stage Route 5",
+            "Autumn Ring", "Deep Forest", "Special Stage Route 5", "Grand Valley Speedway"
+         ]
 
     def licence_tests(self) -> List[str]:
         return [f"{l}-{n}" for l in ["B", "A", "IA"] for n in range(1, 8)]
@@ -100,9 +102,11 @@ class GranTurismo(Game):
         return ["Sunday Cup", "Clubman Cup", "Gran Turismo Cup", "Gran Turismo World Cup"]
     
     def special_events(self) -> List[str]:
-        return ["FF Challenge", "FR Challenge", "4WD Challenge", "Lightweight Sports Battle Stage",
-                "US-Japan Sports Car Championship", "Anglo-Japanese Sports Car Championship", "Anglo-American Sports Car Championship",
-                "Megaspeed Cup", "Normal Car World Speed Contest", "Hard-Tuned Car Speed Contest"]
+        return [
+            "FF Challenge", "FR Challenge", "4WD Challenge", "Lightweight Sports Battle Stage",
+            "US-Japan Sports Car Championship", "Anglo-Japanese Sports Car Championship", "Anglo-American Sports Car Championship",
+            "Megaspeed Cup", "Normal Car World Speed Contest", "Hard-Tuned Car Speed Contest"
+        ]
     
     def spot_race_tracks(self) -> List[str]:
         return ["High Speed Ring", "Grand Valley East", "Autumn Ring Mini", "Trial Mountain Circuit", "Deep Forest"]
@@ -199,7 +203,7 @@ class GranTurismo(Game):
             GameObjectiveTemplate(
                 label = "Become the LEAGUE Champion!",
                 data = {
-                    "LEAGUE": (self.gt_league, 1),
+                    "LEAGUE": (self.gt_league, 1)
                 },
                 is_time_consuming = True,
                 is_difficult = False,
@@ -212,7 +216,7 @@ class GranTurismo(Game):
             GameObjectiveTemplate(
                 label = "Become the EVENT Champion!",
                 data = {
-                    "EVENT": (self.special_events, 1),
+                    "EVENT": (self.special_events, 1)
                 },
                 is_time_consuming = True,
                 is_difficult = False,
@@ -247,7 +251,7 @@ class GranTurismo(Game):
             GameObjectiveTemplate(
                 label = "Win the EVENT!",
                 data = {
-                    "EVENT": (self.endurances, 1),
+                    "EVENT": (self.endurances, 1)
                 },
                 is_time_consuming = True,
                 is_difficult = False,

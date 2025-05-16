@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import List, Dict, Set
+from typing import List, Set
 
 from dataclasses import dataclass
 
@@ -100,13 +100,15 @@ class GranTurismo2(Game):
         return ["Difficult"]
     
     def arcade_tarmac_tracks(self) -> List[str]:
-        return ["Tahiti Road", "Midfield Raceway", "High Speed Ring",
-                "Super Speedway", "Seattle Short Course", "Rome Short Course",
-                "Red Rock Valley Speedway", "Seattle Circuit", "Rome Circuit",
-                "Grindelwald", "Laguna Seca Raceway", "Apricot Hill Speedway",
-                "Trial Mountain Circuit", "Clubman Stage Route 5", "Grand Valley East Section",
-                "Grand Valley Speedway", "Special Stage Route 5", "Autumn Ring",
-                "Test Course", "Deep Forest Raceway", "Rome Night"]
+        return [
+            "Tahiti Road", "Midfield Raceway", "High Speed Ring",
+            "Super Speedway", "Seattle Short Course", "Rome Short Course",
+            "Red Rock Valley Speedway", "Seattle Circuit", "Rome Circuit",
+            "Grindelwald", "Laguna Seca Raceway", "Apricot Hill Speedway",
+            "Trial Mountain Circuit", "Clubman Stage Route 5", "Grand Valley East Section",
+            "Grand Valley Speedway", "Special Stage Route 5", "Autumn Ring",
+            "Test Course", "Deep Forest Raceway", "Rome Night"
+        ]
 
     def licence_tests(self) -> List[str]:
         return [f"{l}-{n}" for l in ["B", "A", "IC", "IB", "IA", "S"] for n in range(1, 10)]
@@ -176,21 +178,25 @@ class GranTurismo2(Game):
     
     def maker_events_races(self) -> List[str]:
         return [
-            "106 Challenge", "155 & 156 Race", "3 Series Cup", "500 Meeting", "Altezza Cup",
-            "Alto Works Cup", "AZ-1 Challenge", "Beat the Beat", "Cappuccino Cup", "Celica Meeting",
-            "Challenge S2000", "Civic Race", "Clio Cup", "Corvette Meeting", "Cuore Challenge",
-            "DB-7 Trophy", "Delta Cup", "Demio Race", "Elan Trophy", "Elise Trophy",
-            "Evolution Meeting", "Focus Challenge", "Golf Cup", "GT-R Meeting", "Impreza Challenge",
-            "Ka Challenge", "March Trophy", "MGF Challenge", "Midget Contest", "Mini Challenge",
-            "Mirage Cup", "MR-S Trophy", "MX-5 Trophy", "Neon Trophy", "New Beetle Challenge",
-            "NSX Trophy", "Pulsar Cup", "RX-7 Meeting", "Saxo Challenge", "Silvia & 180SX Club",
-            "Sirion Challenge", "Skyline R34 Challenge", "SLK Trophy", "Starlet Meeting", "SVX Challenge",
-            "Tigra Cup", "TT Challenge", "Tuscan Speed Challenge", "Type R Meeting", "Viper Festival of Speed",
-            "Yaris Trophy", "ZZ Challenge"
+            "106 Challenge", "155 & 156 Race", "500 Meeting", "Altezza Cup", "Alto Works Cup",
+            "Cappuccino Cup", "Celica Meeting", "Challenge S2000", "Civic Race", "Clio Cup",
+            "Corvette Meeting", "Cuore Challenge", "DB-7 Trophy", "Delta Cup", "Demio Race",
+            "Elan Trophy", "Elise Trophy", "Golf Cup", "GT-R Meeting",  "Ka Challenge",
+            "March Trophy", "MGF Challenge", "Mini Challenge", "Mirage Cup", "MX-5 Trophy",
+            "Neon Trophy", "New Beetle Challenge", "Saxo Challenge", "Silvia & 180SX Club",
+            "Sirion Challenge", "SLK Trophy", "SVX Challenge", "Tigra Cup", "TT Challenge",
+            "Tuscan Speed Challenge", "Viper Festival of Speed", "Yaris Trophy", "ZZ Challenge"
         ]
     
     def maker_events_styles(self) -> List[str]:
         return ["Normal", "Racing"]
+    
+    def maker_events_normal_only(self) -> List[str]:
+        return [
+            "3 Series Cup", "AZ-1 Challenge", "Beat the Beat", "Evolution Meeting", "Focus Challenge",
+            "Impreza Challenge", "Midget Contest", "MR-S Trophy", "NSX Trophy", "Pulsar Cup",
+            "RX-7 Meeting", "Skyline R34 Challenge", "Starlet Meeting", "Type R Meeting"
+        ]
 
     def event_synth_ranks(self) -> List[str]:
         return ["Easy/Beginner", "Normal/Intermediate"]
@@ -303,7 +309,7 @@ class GranTurismo2(Game):
             GameObjectiveTemplate(
                 label = "Stand on the podium in the RACE!",
                 data = {
-                    "RACE": (self.gt_league_races, 1),
+                    "RACE": (self.gt_league_races, 1)
                 },
                 is_time_consuming = False,
                 is_difficult = False,
@@ -312,7 +318,7 @@ class GranTurismo2(Game):
             GameObjectiveTemplate(
                 label = "Win the RACE!",
                 data = {
-                    "RACE": (self.gt_league_races, 1),
+                    "RACE": (self.gt_league_races, 1)
                 },
                 is_time_consuming = False,
                 is_difficult = False,
@@ -321,7 +327,7 @@ class GranTurismo2(Game):
             GameObjectiveTemplate(
                 label = "Become the LEAGUE Champion!",
                 data = {
-                    "LEAGUE": (self.gt_league_series, 1),
+                    "LEAGUE": (self.gt_league_series, 1)
                 },
                 is_time_consuming = True,
                 is_difficult = False,
@@ -334,7 +340,7 @@ class GranTurismo2(Game):
             GameObjectiveTemplate(
                 label = "Stand on the podium in the RACE!",
                 data = {
-                    "RACE": (self.special_events_races, 1),
+                    "RACE": (self.special_events_races, 1)
                 },
                 is_time_consuming = False,
                 is_difficult = False,
@@ -343,7 +349,7 @@ class GranTurismo2(Game):
             GameObjectiveTemplate(
                 label = "Win the RACE!",
                 data = {
-                    "RACE": (self.special_events_races, 1),
+                    "RACE": (self.special_events_races, 1)
                 },
                 is_time_consuming = False,
                 is_difficult = False,
@@ -352,7 +358,7 @@ class GranTurismo2(Game):
             GameObjectiveTemplate(
                 label = "Become the LEAGUE Champion!",
                 data = {
-                    "LEAGUE": (self.special_events_series, 1),
+                    "LEAGUE": (self.special_events_series, 1)
                 },
                 is_time_consuming = True,
                 is_difficult = False,
@@ -365,7 +371,7 @@ class GranTurismo2(Game):
             GameObjectiveTemplate(
                 label = "Win the RALLY!",
                 data = {
-                    "RALLY": (self.dirt_events_races, 1),
+                    "RALLY": (self.dirt_events_races, 1)
                 },
                 is_time_consuming = False,
                 is_difficult = False,
@@ -374,7 +380,7 @@ class GranTurismo2(Game):
             GameObjectiveTemplate(
                 label = "Win the RALLY!",
                 data = {
-                    "RALLY": (self.dirt_events_hard_races, 1),
+                    "RALLY": (self.dirt_events_hard_races, 1)
                 },
                 is_time_consuming = False,
                 is_difficult = True,
@@ -383,12 +389,21 @@ class GranTurismo2(Game):
         ] if self.include_rally_events else []
     
     def get_maker_objectives(self) -> List[GameObjectiveTemplate]:
-        return [         
+        return [
             GameObjectiveTemplate(
                 label = "Win the RACE in a STYLE car!",
                 data = {
                     "RACE": (self.maker_events_races, 1),
-                    "STYLE": (self.maker_events_styles, 1),
+                    "STYLE": (self.maker_events_styles, 1)
+                },
+                is_time_consuming = False,
+                is_difficult = False,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Win the RACE in a Normal car!",
+                data = {
+                    "RACE": (self.maker_events_normal_only, 1)
                 },
                 is_time_consuming = False,
                 is_difficult = False,
@@ -450,7 +465,7 @@ class GranTurismo2(Game):
             GameObjectiveTemplate(
                 label = "Win the RACE!",
                 data = {
-                    "RACE": (self.endurances, 1),
+                    "RACE": (self.endurances, 1)
                 },
                 is_time_consuming = True,
                 is_difficult = False,
