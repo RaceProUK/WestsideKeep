@@ -85,7 +85,7 @@ class GranTurismo3(Game):
     def include_rally_events(self) -> bool:
         return "Rally Events" in self.career_sections
     
-    def arcade__tarmac_classes(self) -> List[str]:
+    def arcade_tarmac_classes(self) -> List[str]:
         return ["C", "B", "A", "S"]
 
     def arcade_ranks(self) -> List[str]:
@@ -216,7 +216,7 @@ class GranTurismo3(Game):
             GameObjectiveTemplate(
                 label = "Stand on the podium at TRACK in Class CLASS at RANK level or higher in Arcade Mode!",
                 data = {
-                    "CLASS": (self.arcade_classes, 1),
+                    "CLASS": (self.arcade_tarmac_classes, 1),
                     "RANK": (self.arcade_ranks, 1),
                     "TRACK": (self.arcade_tarmac_tracks, 1)
                 },
@@ -227,7 +227,7 @@ class GranTurismo3(Game):
             GameObjectiveTemplate(
                 label = "Win the race at TRACK in Class CLASS at RANK level or higher in Arcade Mode!",
                 data = {
-                    "CLASS": (self.arcade_classes, 1),
+                    "CLASS": (self.arcade_tarmac_classes, 1),
                     "RANK": (self.arcade_ranks, 1),
                     "TRACK": (self.arcade_tarmac_tracks, 1)
                 },
@@ -238,7 +238,7 @@ class GranTurismo3(Game):
             GameObjectiveTemplate(
                 label = "Stand on the podium at TRACK in Class CLASS at RANK level in Arcade Mode!",
                 data = {
-                    "CLASS": (self.arcade_classes, 1),
+                    "CLASS": (self.arcade_tarmac_classes, 1),
                     "RANK": (self.arcade_hard_ranks, 1),
                     "TRACK": (self.arcade_tarmac_tracks, 1)
                 },
@@ -249,7 +249,7 @@ class GranTurismo3(Game):
             GameObjectiveTemplate(
                 label = "Win the race at TRACK in Class CLASS at RANK level in Arcade Mode!",
                 data = {
-                    "CLASS": (self.arcade_classes, 1),
+                    "CLASS": (self.arcade_tarmac_classes, 1),
                     "RANK": (self.arcade_hard_ranks, 1),
                     "TRACK": (self.arcade_tarmac_tracks, 1)
                 },
@@ -414,7 +414,7 @@ class GranTurismo3(Game):
                 is_difficult = False,
                 weight = 3
             )
-        ] if self.include_endurances else []
+        ] if self.include_endurance_league else []
     
     def get_rally_objectives(self) -> List[GameObjectiveTemplate]:
         return [
