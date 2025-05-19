@@ -313,7 +313,7 @@ class GranTurismo3(Game):
     def get_beginner_objectives(self) -> List[GameObjectiveTemplate]:
         return [
             GameObjectiveTemplate(
-                label = "Stand on the podium in the RACE!",
+                label = "Stand on the podium in the Beginner League RACE!",
                 data = {
                     "RACE": (self.beginner_league_races, 1)
                 },
@@ -322,7 +322,7 @@ class GranTurismo3(Game):
                 weight = 3
             ),           
             GameObjectiveTemplate(
-                label = "Win the RACE!",
+                label = "Win the Beginner League RACE!",
                 data = {
                     "RACE": (self.beginner_league_races, 1)
                 },
@@ -331,7 +331,7 @@ class GranTurismo3(Game):
                 weight = 3
             ),
             GameObjectiveTemplate(
-                label = "Become the LEAGUE Champion!",
+                label = "Become the Beginner League LEAGUE Champion!",
                 data = {
                     "LEAGUE": (self.beginner_league_series, 1)
                 },
@@ -344,7 +344,7 @@ class GranTurismo3(Game):
     def get_amateur_objectives(self) -> List[GameObjectiveTemplate]:
         return [
             GameObjectiveTemplate(
-                label = "Stand on the podium in the RACE!",
+                label = "Stand on the podium in the Amateur League RACE!",
                 data = {
                     "RACE": (self.amateur_league_races, 1)
                 },
@@ -353,7 +353,7 @@ class GranTurismo3(Game):
                 weight = 3
             ),           
             GameObjectiveTemplate(
-                label = "Win the RACE!",
+                label = "Win the Amateur League RACE!",
                 data = {
                     "RACE": (self.amateur_league_races, 1)
                 },
@@ -362,7 +362,7 @@ class GranTurismo3(Game):
                 weight = 3
             ),
             GameObjectiveTemplate(
-                label = "Become the LEAGUE Champion!",
+                label = "Become the Amateur League LEAGUE Champion!",
                 data = {
                     "LEAGUE": (self.amateur_league_series, 1)
                 },
@@ -375,7 +375,7 @@ class GranTurismo3(Game):
     def get_professional_objectives(self) -> List[GameObjectiveTemplate]:
         return [
             GameObjectiveTemplate(
-                label = "Stand on the podium in the RACE!",
+                label = "Stand on the podium in the Professional League RACE!",
                 data = {
                     "RACE": (self.professional_league_races, 1)
                 },
@@ -384,7 +384,7 @@ class GranTurismo3(Game):
                 weight = 3
             ),           
             GameObjectiveTemplate(
-                label = "Win the RACE!",
+                label = "Win the Professional League RACE!",
                 data = {
                     "RACE": (self.professional_league_races, 1)
                 },
@@ -393,7 +393,7 @@ class GranTurismo3(Game):
                 weight = 3
             ),
             GameObjectiveTemplate(
-                label = "Become the LEAGUE Champion!",
+                label = "Become the Professional League LEAGUE Champion!",
                 data = {
                     "LEAGUE": (self.professional_league_series, 1)
                 },
