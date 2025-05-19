@@ -314,7 +314,7 @@ class GranTurismo2(Game):
                 is_time_consuming = False,
                 is_difficult = False,
                 weight = 3
-            ),           
+            ),
             GameObjectiveTemplate(
                 label = "Win the RACE!",
                 data = {
@@ -345,7 +345,7 @@ class GranTurismo2(Game):
                 is_time_consuming = False,
                 is_difficult = False,
                 weight = 3
-            ),           
+            ),
             GameObjectiveTemplate(
                 label = "Win the RACE!",
                 data = {
@@ -376,7 +376,7 @@ class GranTurismo2(Game):
                 is_time_consuming = False,
                 is_difficult = False,
                 weight = 3
-            ),   
+            ),
             GameObjectiveTemplate(
                 label = "Win the RALLY!",
                 data = {
