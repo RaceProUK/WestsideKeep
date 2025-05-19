@@ -305,7 +305,7 @@ class GranTurismo2(Game):
         ] if self.include_licence_tests else []
     
     def get_league_objectives(self) -> List[GameObjectiveTemplate]:
-        return [            
+        return [
             GameObjectiveTemplate(
                 label = "Stand on the podium in the RACE!",
                 data = {
@@ -336,7 +336,7 @@ class GranTurismo2(Game):
         ] if self.include_gt_league else []
     
     def get_event_objectives(self) -> List[GameObjectiveTemplate]:
-        return [         
+        return [
             GameObjectiveTemplate(
                 label = "Stand on the podium in the RACE!",
                 data = {
@@ -367,7 +367,7 @@ class GranTurismo2(Game):
         ] if self.include_special_events else []
     
     def get_rally_objectives(self) -> List[GameObjectiveTemplate]:
-        return [         
+        return [
             GameObjectiveTemplate(
                 label = "Win the RALLY!",
                 data = {
