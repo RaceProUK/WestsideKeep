@@ -421,7 +421,7 @@ class GranTurismo3(Game):
             GameObjectiveTemplate(
                 label = "Beat your rival at RALLY!",
                 data = {
-                    "RALLY": (self.dirt_events_races, 1)
+                    "RALLY": (self.rally_events, 1)
                 },
                 is_time_consuming = False,
                 is_difficult = False,
