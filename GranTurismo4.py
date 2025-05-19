@@ -94,12 +94,12 @@ class GranTurismo4(Game):
         return self.archipelago_options.gran_turismo_4_arcade_track_types.value
     
     @property
-    def driving_mission_types(self) -> Set[str]:
-        return self.archipelago_options.gran_turismo_4_driving_mission_types.value
+    def career_sections(self) -> Set[str]:
+        return self.archipelago_options.gran_turismo_4_career_sections.value
     
     @property
-    def career_sections(self) -> Set[str]:
-        return self.archipelago_options.gran_turismo_4_dr.value
+    def driving_mission_types(self) -> Set[str]:
+        return self.archipelago_options.gran_turismo_4_driving_mission_types.value
     
     @property
     def include_world_tracks(self) -> bool:
@@ -282,16 +282,16 @@ class GranTurismo4(Game):
         return []
     
     def the_pass_missions(self) -> List[int]:
-        return list(range(1, 10))
+        return list(range(1, 11))
     
     def three_lap_battle_missions(self) -> List[int]:
-        return list(range(11, 10))
+        return list(range(11, 21))
     
     def slipstream_battle_missions(self) -> List[int]:
-        return list(range(21, 4))
+        return list(range(21, 25))
     
     def one_lap_magic_missions(self) -> List[int]:
-        return list(range(25, 10))
+        return list(range(25, 35))
     
     def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
         return []
