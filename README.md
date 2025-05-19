@@ -22,5 +22,5 @@ The created `Keymaster's Keep.yaml` template can then be edited and used for mul
 |:----------------------:|:--------:|:------:|
 | Gran Turismo           | PS1      | ✔     |
 | Gran Turismo 2         | PS1      | ✔     |
-| Gran Turismo 3: A-Spec | PS2      | 📓     |
+| Gran Turismo 3: A-Spec | PS2      | ✔     |
 | Gran Turismo 4         | PS2      | 📓     |
