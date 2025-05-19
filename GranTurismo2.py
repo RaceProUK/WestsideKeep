@@ -92,7 +92,7 @@ class GranTurismo2(Game):
     
     def arcade_classes(self) -> List[str]:
         return ["C", "B", "A", "S"]
-
+    
     def arcade_ranks(self) -> List[str]:
         return ["Easy", "Normal"]
     
@@ -109,7 +109,7 @@ class GranTurismo2(Game):
             "Grand Valley Speedway", "Special Stage Route 5", "Autumn Ring",
             "Test Course", "Deep Forest Raceway", "Rome Night"
         ]
-
+    
     def licence_tests(self) -> List[str]:
         return [f"{l}-{n}" for l in ["B", "A", "IC", "IB", "IA", "S"] for n in range(1, 10)]
     
@@ -197,7 +197,7 @@ class GranTurismo2(Game):
             "Impreza Challenge", "Midget Contest", "MR-S Trophy", "NSX Trophy", "Pulsar Cup",
             "RX-7 Meeting", "Skyline R34 Challenge", "Starlet Meeting", "Type R Meeting"
         ]
-
+    
     def event_synth_ranks(self) -> List[str]:
         return ["Easy/Beginner", "Normal/Intermediate"]
     
@@ -206,7 +206,7 @@ class GranTurismo2(Game):
     
     def event_synth_long_ranks(self) -> List[str]:
         return ["Expert/Pro"]
-
+    
     def endurances(self) -> List[str]:
         return [
             "Grand Valley 300km",
@@ -217,13 +217,13 @@ class GranTurismo2(Game):
             "Trial Mountain 30 Laps",
             "Special Stage Route 5 All-Night"
         ]
-
+    
     def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
         return []
     
     def game_objective_templates(self) -> List[GameObjectiveTemplate]:
         return self.get_arcade_objectives() + self.get_career_objectives()
-
+    
     def get_arcade_objectives(self) -> List[GameObjectiveTemplate]:
         return [
             GameObjectiveTemplate(

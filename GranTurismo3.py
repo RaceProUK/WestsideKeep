@@ -87,7 +87,7 @@ class GranTurismo3(Game):
     
     def arcade_tarmac_classes(self) -> List[str]:
         return ["C", "B", "A", "S"]
-
+    
     def arcade_ranks(self) -> List[str]:
         return ["Easy", "Normal"]
     
@@ -106,7 +106,7 @@ class GranTurismo3(Game):
     
     def arcade_rally_tracks(self) -> List[str]:
         return ["Smokey Mountain", "Swiss Alps", "Tahiti Circuit", "Tahiti Maze"]
-
+    
     def licence_tests(self) -> List[str]:
         return [f"{l}-{n}" for l in ["B", "A", "IB", "IA", "S", "R"] for n in range(1, 8)]
     
@@ -128,7 +128,7 @@ class GranTurismo3(Game):
             "Evolution Meeting": 3
         }
         return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
-
+    
     def beginner_league_series(self) -> List[str]:
         return [
             "Tourist Trophy", "Altezza Race",
@@ -152,7 +152,7 @@ class GranTurismo3(Game):
             "Evolution Meeting": 3
         }
         return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
-
+    
     def amateur_league_series(self) -> List[str]:
         return [
             "Japanese Championship", "American Championship", "European Championship",
@@ -178,7 +178,7 @@ class GranTurismo3(Game):
             "Like the Wind": 1
         }
         return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
-
+    
     def professional_league_series(self) -> List[str]:
         return [
             "GT World Championship", "Gran Turismo All Stars",
@@ -186,7 +186,7 @@ class GranTurismo3(Game):
             "Tuscan Challenge", "Dream Car Championship",
             "Polyphony Digital Cup", "Formula GT"
         ]
-
+    
     def endurances(self) -> List[str]:
         return [
             "Grand Valley 300km", "Seattle 100 Miles",
@@ -195,7 +195,7 @@ class GranTurismo3(Game):
             "Roadster Endurance", "Tokyo R246 Endurance",
             "Mistral 78 Laps", "Super Speedway 150 Miles"
         ]
-
+    
     def rally_events(self) -> List[str]:
         return [
             "Tahiti Challenge", "Tahiti Challenge II",
@@ -204,13 +204,13 @@ class GranTurismo3(Game):
             "Alpine Rally", "Alpine Rally II",
             "Super Special Route 5", "Super Special Route 5 II",
         ]
-
+    
     def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
         return []
     
     def game_objective_templates(self) -> List[GameObjectiveTemplate]:
         return self.get_arcade_objectives() + self.get_career_objectives()
-
+    
     def get_arcade_objectives(self) -> List[GameObjectiveTemplate]:
         return [
             GameObjectiveTemplate(
@@ -426,5 +426,5 @@ class GranTurismo3(Game):
                 is_time_consuming = False,
                 is_difficult = False,
                 weight = 3
-            ),
+            )
         ] if self.include_rally_events else []

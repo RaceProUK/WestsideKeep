@@ -82,7 +82,7 @@ class GranTurismo(Game):
     
     def arcade_classes(self) -> List[str]:
         return ["C", "B", "A"]
-
+    
     def arcade_ranks(self) -> List[str]:
         return ["Easy", "Normal"]
     
@@ -94,7 +94,7 @@ class GranTurismo(Game):
             "High Speed Ring", "Trial Mountain Circuit", "Grand Valley East", "Clubman Stage Route 5",
             "Autumn Ring", "Deep Forest", "Special Stage Route 5", "Grand Valley Speedway"
          ]
-
+    
     def licence_tests(self) -> List[str]:
         return [f"{l}-{n}" for l in ["B", "A", "IA"] for n in range(1, 8)]
     
@@ -113,13 +113,13 @@ class GranTurismo(Game):
     
     def endurances(self) -> List[str]:
         return ["Grand Valley 300km", "Special Stage Route 11 All-Night 1", "Special Stage Route 11 All-Night 2"]
-
+    
     def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
         return []
     
     def game_objective_templates(self) -> List[GameObjectiveTemplate]:
         return self.get_arcade_objectives() + self.get_career_objectives()
-
+    
     def get_arcade_objectives(self) -> List[GameObjectiveTemplate]:
         return [
             GameObjectiveTemplate(
