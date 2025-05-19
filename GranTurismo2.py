@@ -42,7 +42,7 @@ class GT2CareerSections(OptionSet):
     """
     display_name = "Gran Turismo Mode Objective Areas"
     valid_keys = ["Licenses", "Gran Turismo League", "Special Events", "Dirt Events", "Manufacturer Events", "Event Generator", "Endurance"]
-    default = valid_keys[0:6]
+    default = valid_keys
 
 class GranTurismo2(Game):
     name = "Gran Turismo 2"

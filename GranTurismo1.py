@@ -40,7 +40,7 @@ class GT1CareerSections(OptionSet):
     """
     display_name = "Gran Turismo Mode Objective Areas"
     valid_keys = ["Licenses", "GT League", "Special Events", "Spot Races", "Endurance"]
-    default = valid_keys[0:4]
+    default = valid_keys
 
 class GranTurismo(Game):
     name = "Gran Turismo"
