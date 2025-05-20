@@ -233,6 +233,9 @@ class GranTurismo4(Game):
         }
         return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
     
+    def professional_series(self) -> List[str]:
+        return ["Tuning Car Grand Prix", "World Classics", "Gran Turismo World Championship"]
+    
     def extreme_events(self) -> List[str]:
         sets = {
             "Gran Turismo All Stars": 10,
@@ -244,6 +247,9 @@ class GranTurismo4(Game):
             "Premium Sports Lounge": 5
         }
         return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
+    
+    def extreme_series(self) -> List[str]:
+        return ["Gran Turismo All Stars", "Dream Car Championship", "Polyphony Digital Cup", "Formula GT World Championship"]
     
     def endurance_events(self) -> List[str]:
         return [
@@ -276,10 +282,122 @@ class GranTurismo4(Game):
         return ["Easy", "Normal", "Hard"]
     
     def regional_events(self) -> List[str]:
-        return []
+        sets = {
+            "Muscle Car Championship": 3,
+            "Old Muscle Car Championship": 3,
+            "Stars & Stripes": 3,
+            "United States Championship": 5,
+            "British GT Car Cup": 5,
+            "British Lightweights": 3,
+            "Pan Euro Championship": 5,
+            "European Classic Car Championship": 5,
+            "European Hot Hatch Car Championship": 5,
+            "French Championship": 5,
+            "German Touring Car Championship": 5,
+            "Italian Festival": 3,
+            "Schwarzwald League A": 3,
+            "Schwarzwald League B": 5,
+            "All Japan GT Championship": 10,
+            "Japan Championship": 5,
+            "Japanese 70's Classics": 5,
+            "Japanese 80's Festival": 5,
+            "Japanese 90's Challenge": 5,
+            "Japanese Compact Cup": 5
+        }
+        return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
+    
+    def regional_events_long(self) -> List[str]:
+        sets = {
+            "1000 Miles!": 4
+        }
+        return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
+    
+    def regional_series(self) -> List[str]:
+        return [
+            "United States Championship",
+            "1000 Miles!",
+            "British GT Car Cup",
+            "Pan Euro Championship",
+            "European Classic Car Championship",
+            "European Hot Hatch Car Championship",
+            "French Championship",
+            "German Touring Car Championship",
+            "All Japan GT Championship",
+            "Japan Championship",
+            "Japanese Compact Cup"
+        ]
     
     def manufacturer_events(self) -> List[str]:
-        return []
+        sets = {
+            "1 Series Trophy": 3,
+            "206 Cup": 5,
+            "2HP-2CV Classics": 5,
+            "A3 Cup": 3,
+            "Alpine Cup": 5,
+            "Altezza Race": 5,
+            "Aston Martin Festival": 3,
+            "Beetle Cup": 5,
+            "Blackpool Racers": 5,
+            "Camaro Meeting": 3,
+            "Civic Race": 5,
+            "Clio Trophy": 5,
+            "Club \"M\"": 5,
+            "Club \"RE\"": 5,
+            "Club \"Z\"": 5,
+            "Copen Race": 3,
+            "Corvette Festival": 5,
+            "Crossfire Trophy": 3,
+            "Elise Trophy": 5,
+            "Evolution Meeting": 3,
+            "GTA Cup": 3,
+            "GTI Cup": 5,
+            "Hyundai Sports Festival": 5,
+            "Isuzu Sports Classics": 3,
+            "Legends of the Silver Arrow": 3,
+            "Lotus Classics": 5,
+            "Lupo Cup": 5,
+            "March/Micra Brothers": 3,
+            "Megane Cup": 5,
+            "MG Festival": 5,
+            "Midget II Race": 1,
+            "Mini Sports Meeting": 5,
+            "Mirage Cup": 5,
+            "Race of Red Emblem": 5,
+            "Race of the Pleiades": 5,
+            "Roadster Cup": 5,
+            "RX-8 Cup": 5,
+            "Saleen S7 Club": 5,
+            "Shelby Cobra Cup": 5,
+            "Silvia Sisters": 3,
+            "SL Challenge": 3,
+            "Speedster Trophy": 5,
+            "Spitfire Cup": 5,
+            "Subaru 360 Race": 1,
+            "Suzuki Concepts": 3,
+            "Suzuki K Cup": 3,
+            "Tourist Trophy": 3,
+            "Type R Meeting": 5,
+            "Vitz/Yaris Race": 5
+        }
+        return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
+    
+    def manufacturer_series(self) -> List[str]:
+        return [
+            "2HP-2CV Classics",
+            "Alpine Cup",
+            "Beetle Cup",
+            "Clio Trophy",
+            "Club \"M\"",
+            "Elise Trophy",
+            "Lotus Classics",
+            "Lupo Cup",
+            "Megane Cup",
+            "Mirage Cup",
+            "Race of the Pleiades",
+            "Roadster Cup",
+            "RX-8 Cup",
+            "Tourist Trophy"
+        ]
     
     def the_pass_missions(self) -> List[int]:
         return list(range(1, 11))
@@ -438,7 +556,7 @@ class GranTurismo4(Game):
                 is_time_consuming = False,
                 is_difficult = False,
                 weight = 3
-            ),           
+            ),
             GameObjectiveTemplate(
                 label = "Win the RACE!",
                 data = {
@@ -460,13 +578,22 @@ class GranTurismo4(Game):
                 is_time_consuming = False,
                 is_difficult = False,
                 weight = 3
-            ),           
+            ),
             GameObjectiveTemplate(
                 label = "Win the RACE!",
                 data = {
                     "RACE": (self.professional_events, 1)
                 },
                 is_time_consuming = False,
+                is_difficult = False,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Become the LEAGUE Champion!",
+                data = {
+                    "LEAGUE": (self.professional_series, 1)
+                },
+                is_time_consuming = True,
                 is_difficult = False,
                 weight = 3
             )
@@ -482,11 +609,20 @@ class GranTurismo4(Game):
                 is_time_consuming = True,
                 is_difficult = True,
                 weight = 3
-            ),           
+            ),
             GameObjectiveTemplate(
                 label = "Win the RACE!",
                 data = {
                     "RACE": (self.extreme_events, 1)
+                },
+                is_time_consuming = True,
+                is_difficult = True,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Become the LEAGUE Champion!",
+                data = {
+                    "LEAGUE": (self.extreme_series, 1)
                 },
                 is_time_consuming = True,
                 is_difficult = True,
@@ -504,7 +640,7 @@ class GranTurismo4(Game):
                 is_time_consuming = True,
                 is_difficult = False,
                 weight = 3
-            ),           
+            ),
             GameObjectiveTemplate(
                 label = "Win the RACE!",
                 data = {
@@ -531,10 +667,84 @@ class GranTurismo4(Game):
         ] if self.include_special_conditions else []
     
     def get_regional_events_objectives(self) -> List[GameObjectiveTemplate]:
-        return [] if self.include_regional_events else []
+        return [
+            GameObjectiveTemplate(
+                label = "Stand on the podium in the RACE!",
+                data = {
+                    "RACE": (self.regional_events, 1)
+                },
+                is_time_consuming = False,
+                is_difficult = False,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Win the RACE!",
+                data = {
+                    "RACE": (self.regional_events, 1)
+                },
+                is_time_consuming = False,
+                is_difficult = False,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Stand on the podium in the RACE!",
+                data = {
+                    "RACE": (self.regional_events_long, 1)
+                },
+                is_time_consuming = True,
+                is_difficult = False,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Win the RACE!",
+                data = {
+                    "RACE": (self.regional_events_long, 1)
+                },
+                is_time_consuming = True,
+                is_difficult = False,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Become the LEAGUE Champion!",
+                data = {
+                    "LEAGUE": (self.regional_series, 1)
+                },
+                is_time_consuming = True,
+                is_difficult = False,
+                weight = 3
+            )
+        ] if self.include_regional_events else []
     
     def get_manufacturer_events_objectives(self) -> List[GameObjectiveTemplate]:
-        return [] if self.include_manufacturer_events else []
+        return [
+            GameObjectiveTemplate(
+                label = "Stand on the podium in the RACE!",
+                data = {
+                    "RACE": (self.manufacturer_events, 1)
+                },
+                is_time_consuming = False,
+                is_difficult = False,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Win the RACE!",
+                data = {
+                    "RACE": (self.manufacturer_events, 1)
+                },
+                is_time_consuming = False,
+                is_difficult = False,
+                weight = 3
+            ),
+            GameObjectiveTemplate(
+                label = "Become the LEAGUE Champion!",
+                data = {
+                    "LEAGUE": (self.manufacturer_series, 1)
+                },
+                is_time_consuming = True,
+                is_difficult = False,
+                weight = 3
+            )
+        ] if self.include_manufacturer_events else []
     
     def get_driving_missions_objectives(self) -> List[GameObjectiveTemplate]:
         return (self.get_the_pass_objectives() +
