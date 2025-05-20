@@ -124,8 +124,14 @@ class GranTurismo3(Game):
             "80's Sports Car Cup": 3,
             "Race of NA Sports": 3,
             "Race of Turbo Sports": 3,
+            "Tourist Trophy": 5,
             "Legend of Silver Arrow": 3,
-            "Evolution Meeting": 3
+            "Altezza Race": 5,
+            "Vitz/Yaris Race": 5,
+            "Type-R Meeting": 5,
+            "Evolution Meeting": 3,
+            "Beetle Cup": 5,
+            "Gran Turismo World Championship": 10
         }
         return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
     
@@ -138,6 +144,11 @@ class GranTurismo3(Game):
     
     def amateur_league_races(self) -> List[str]:
         sets = {
+            "Japanese Championship": 5,
+            "American Championship": 5,
+            "European Championship": 5,
+            "Gran Turismo World Championship": 10,
+            "German Touring Car Championship": 5,
             "FF Challenge": 3,
             "FR Challenge": 3,
             "MR Challenge": 3,
@@ -147,9 +158,15 @@ class GranTurismo3(Game):
             "80's Sports Car Cup": 3,
             "Race of NA Sports": 3,
             "Race of Turbo Sports": 3,
+            "Gran Turismo All Stars": 10,
+            "All Japan GT Championship": 10,
+            "Tourist Trophy": 5,
             "Race of Red Emblem": 3,
             "Legend of Silver Arrow": 3,
-            "Evolution Meeting": 3
+            "Altezza Race": 5,
+            "Type-R Meeting": 5,
+            "Evolution Meeting": 3,
+            "Dream Car Championship": 7
         }
         return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
     
@@ -164,6 +181,7 @@ class GranTurismo3(Game):
     def professional_league_races(self) -> List[str]:
         sets = {
             "British GT Car Cup": 3,
+            "GT World Championship": 10,
             "FF Challenge": 3,
             "FR Challenge": 3,
             "4WD Challenge": 3,
@@ -172,10 +190,18 @@ class GranTurismo3(Game):
             "Boxer Spirit": 3,
             "Race of NA Sports": 3,
             "Race of Turbo Sports": 3,
+            "Gran Turismo All Stars": 10,
+            "All Japan GT Championship": 10,
             "Italian Avant Garde": 2,
             "Race of Red Emblem": 3,
+            "Vitz/Yaris Race": 5,
             "Elise Trophy": 5,
-            "Like the Wind": 1
+            "Clio Trophy": 5,
+            "Tuscan Challenge": 5,
+            "Dream Car Championship": 7,
+            "Polyphony Digital Cup": 10,
+            "Like the Wind": 1,
+            "Formula GT": 10
         }
         return [f"{series} Race {n + 1}" for series, count in sets.items() for n in range(0, count)]
     
