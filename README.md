@@ -14,13 +14,9 @@ The created `Keymaster's Keep.yaml` template can then be edited and used for mul
 
 ## Game Directory
 
-✔ - Complete
-⏳ - In Development
-📓 - Planned
-
-| Game                   | Platform | Status |
-|:----------------------:|:--------:|:------:|
-| Gran Turismo           | PS1      | ✔     |
-| Gran Turismo 2         | PS1      | ✔     |
-| Gran Turismo 3: A-Spec | PS2      | ✔     |
-| Gran Turismo 4         | PS2      | ✔     |
+| Game                   | Platform | Current Version |
+|:----------------------:|:--------:|:---------------:|
+| Gran Turismo           | PS1      | v1              |
+| Gran Turismo 2         | PS1      | v1              |
+| Gran Turismo 3: A-Spec | PS2      | v1              |
+| Gran Turismo 4         | PS2      | v1              |
