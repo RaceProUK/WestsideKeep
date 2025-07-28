@@ -1,3 +1,6 @@
+---
+title:
+---
 # Installation and Use
 
 This guide assumes you've already installed the [Archipelago Multiworld Randomiser](https://archipelago.gg/) and [Keymaster's Keep](https://github.com/SerpentAI/Archipelago/releases?q=keymaster%27s+keep&expanded=true).
