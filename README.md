@@ -4,15 +4,13 @@ A collection of games for [Keymaster's Keep](https://github.com/SerpentAI/Archip
 
 ## Installation and Use
 
-> [!NOTE]
-> This guide assumes you've already installed Archipelago and Keymaster's Keep.
+This guide assumes you've already installed Archipelago and Keymaster's Keep.
 
 1. Download the `.py` files for the games you wish to add to the keep's game pool
 2. Place the downloaded files in the `keymasters_keep` folder inside your Archipelago installation
 3. Run the Archipelago Launcher and select 'Generate Template Files'
 
-> [!TIP]
-> The created `Keymaster's Keep.yaml` template can then be edited and used for multiworld generation in the usual ways.
+The created `Keymaster's Keep.yaml` template can then be edited and used for multiworld generation in the usual ways.
 
 ## Game Directory
 
