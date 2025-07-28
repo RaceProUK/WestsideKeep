@@ -1,5 +1,5 @@
 ---
-title:
+title: null
 ---
 # Installation and Use
 
