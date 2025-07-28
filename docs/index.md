@@ -8,7 +8,7 @@ This guide assumes you've already installed the [Archipelago Multiworld Randomis
 
 The created `Keymaster's Keep.yaml` template can then be edited and used for multiworld generation in the usual ways.
 
-# Game Directory
+## Game Directory
 
 | Game                   | Platform | Current Version |                                                                                                      |
 |:----------------------:|:--------:|:---------------:|:----------------------------------------------------------------------------------------------------:|
