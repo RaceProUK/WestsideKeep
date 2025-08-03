@@ -1,4 +1,4 @@
-#v1
+#v2
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ from typing import List, Set
 
 from dataclasses import dataclass
 
-from Options import Toggle, OptionSet
+from Options import DefaultOnToggle, OptionSet
 
 from ..game import Game
 from ..game_objective_template import GameObjectiveTemplate
@@ -19,13 +19,13 @@ class GT3APOptions:
     gran_turismo_3_include_career_mode: GT3IncludeCareerMode
     gran_turismo_3_career_sections: GT3CareerSections
 
-class GT3IncludeArcadeMode(Toggle):
+class GT3IncludeArcadeMode(DefaultOnToggle):
     """
     Allow Arcade Mode races as objectives
     """
     display_name = "Include Arcade Mode"
 
-class GT3IncludeCareerMode(Toggle):
+class GT3IncludeCareerMode(DefaultOnToggle):
     """
     Allow Gran Turismo Mode races as objectives
     """
