@@ -12,7 +12,7 @@ The created `Keymaster's Keep.yaml` template can then be edited and used for mul
 
 | Game                   | Platform | Current Version |                                                                                                      |
 |:----------------------:|:--------:|:---------------:|:----------------------------------------------------------------------------------------------------:|
-| Gran Turismo           | PS1      | v2              | [Download](https://raw.githubusercontent.com/RaceProUK/WestsideKeep/refs/heads/main/GranTurismo1.py) |
-| Gran Turismo 2         | PS1      | v2              | [Download](https://raw.githubusercontent.com/RaceProUK/WestsideKeep/refs/heads/main/GranTurismo2.py) |
-| Gran Turismo 3: A-Spec | PS2      | v2              | [Download](https://raw.githubusercontent.com/RaceProUK/WestsideKeep/refs/heads/main/GranTurismo3.py) |
-| Gran Turismo 4         | PS2      | v2              | [Download](https://raw.githubusercontent.com/RaceProUK/WestsideKeep/refs/heads/main/GranTurismo4.py) |
+| Gran Turismo           | PS1      | v3              | [Download](https://raw.githubusercontent.com/RaceProUK/WestsideKeep/refs/heads/main/GranTurismo1.py) |
+| Gran Turismo 2         | PS1      | v3              | [Download](https://raw.githubusercontent.com/RaceProUK/WestsideKeep/refs/heads/main/GranTurismo2.py) |
+| Gran Turismo 3: A-Spec | PS2      | v3              | [Download](https://raw.githubusercontent.com/RaceProUK/WestsideKeep/refs/heads/main/GranTurismo3.py) |
+| Gran Turismo 4         | PS2      | v3              | [Download](https://raw.githubusercontent.com/RaceProUK/WestsideKeep/refs/heads/main/GranTurismo4.py) |

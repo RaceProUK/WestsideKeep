@@ -1,4 +1,4 @@
-#v2
+#v3
 
 from __future__ import annotations
 
@@ -113,7 +113,7 @@ class GranTurismo2(Game):
         ]
     
     def licence_tests(self) -> List[str]:
-        return [f"{l}-{n}" for l in ["B", "A", "IC", "IB", "IA", "S"] for n in range(1, 10)]
+        return [f"{l}-{n}" for l in ["B", "A", "IC", "IB", "IA", "S"] for n in range(1, 11)]
     
     def gt_league_races(self) -> List[str]:
         sets = {
