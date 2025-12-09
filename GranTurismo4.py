@@ -78,6 +78,18 @@ class GT4DrivingMissionTypes(OptionSet):
     default = valid_keys
 
 class GranTurismo4(Game):
+    """
+    Widely considered to be the peak of the franchise, Gran Turismo 4 is
+    _colossal_, possessing more cars, more tracks, and more events than
+    ever before. You could turn Keymaster's Keep up to its maximum settings
+    and only include this one game, and you'd _still_ see only a fraction of
+    what this game has to offer.
+
+    GT4 also introduces a revolutionary new game mode: B-spec. Especially
+    useful for the longer races, B-spec allows the player to share driving
+    responsibility, or even take over completely. And given races in GT4 can
+    be a long as _24 hours_, you'll be thankful to have them along with you.
+    """
     name = "Gran Turismo 4"
     platform = KeymastersKeepGamePlatforms.PS2
     is_adult_only_or_unrated = False

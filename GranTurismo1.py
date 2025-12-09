@@ -45,6 +45,14 @@ class GT1CareerSections(OptionSet):
     default = valid_keys
 
 class GranTurismo(Game):
+    """
+    The best-selling Playstation game of all time, Gran Turismo fundamentally
+    transformed both the racing game genre and popular car culture. Its focus
+    on realistic handling was a stark contrast to the domination of arcade excess,
+    and the wealth of real cars from real manufacturers simultaneously introduced
+    the West to the gems of the Japanese domestic market (JDM) and exposed
+    Japanese car enthusiasts to the very best the UK and the US had to offer.
+    """
     name = "Gran Turismo"
     platform = KeymastersKeepGamePlatforms.PS1
     is_adult_only_or_unrated = False

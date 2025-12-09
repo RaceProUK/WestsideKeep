@@ -47,6 +47,18 @@ class GT2CareerSections(OptionSet):
     default = valid_keys
 
 class GranTurismo2(Game):
+    """
+    After the phenomenal success of Gran Turismo, a sequel was inevitable,
+    and it didn't take long, arriving just two years later. Building on the
+    strong foundation of the original, GT2 has more cars, more tracks, more
+    licenses, and more events. So much was added that it required _two_ CDs
+    just to fit it all in! And while it didn't match the success of the
+    original, it's still the third best-selling PS1 game of all time.
+
+    In contrast to the original's focus on championships, GT2 is mostly solo
+    races loosely grouped into themes. This results in a more sandbox feel
+    to the game, making it ideally suited for Keymaster's Keep.
+    """
     name = "Gran Turismo 2"
     platform = KeymastersKeepGamePlatforms.PS1
     is_adult_only_or_unrated = False

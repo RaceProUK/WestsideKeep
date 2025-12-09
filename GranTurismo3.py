@@ -46,6 +46,18 @@ class GT3CareerSections(OptionSet):
     default = valid_keys
 
 class GranTurismo3(Game):
+    """
+    Gran Turismo 3: A-Spec was the second-best selling game on PS2 for good
+    reason - despite the major reduction in the number of cars and tracks,
+    the game was a massive leap forward over GT2 in every other way. What the
+    roster lacks in quantity it more than makes up for in depth and variety,
+    and the single player career is comparable to GT2's in size.
+
+    While the balance between single races and championships is more even,
+    GT3 allows players to select individual races from championships,
+    largely preserving GT2's sandbox feel and making it a great choice for
+    Keymaster's Keep.
+    """
     name = "Gran Turismo 3: A-Spec"
     platform = KeymastersKeepGamePlatforms.PS2
     is_adult_only_or_unrated = False
